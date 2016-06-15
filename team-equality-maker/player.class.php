@@ -1,8 +1,17 @@
 <?php
-class Summoner {
+class Player {
 
 	private $_name;
-	private $_rank; // int : bronze = 1, silver = 2, gold = 3, platine = 4, diamond = 5, challenger = 6
+	/*
+	 * rank :
+	 * bronze	= 1,2,3,4,5
+	 * silver	= 6,7,8,9,10
+	 * gold 	= 11,12,13,14,15
+	 * platine	= 16,17,18,19,20
+	 * diamond	= 21,22,23,24,25
+	 * challenger = 26
+	 */
+	private $_rank;
 	private $_first_lane; 
 	private $_second_lane;  
 	private $_assigned; //boolean
@@ -54,8 +63,8 @@ class Summoner {
 	public function assignToLane(&$team_list, $lane){
 		if ($lane != null){
 			foreach ($team_list as $team){
-				if ($team->getLaneByName($lane)->getSummoner() == null){
-					$team->getLaneByName($lane)->setSummoner($this);
+				if ($team->getLaneByName($lane)->getPlayer() == null){
+					$team->getLaneByName($lane)->setPlayer($this);
 					$this->_assigned = true;
 					return true;
 				}

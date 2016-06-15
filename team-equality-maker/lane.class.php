@@ -3,11 +3,11 @@
 class Lane {
 	
 	private $_name;
-	private $_summoner;
+	private $_player;
 	
 	public function __construct($name){
 		$this->_name = $name;
-		$this->_summoner = null;
+		$this->_player = null;
 	}
 	
 	public function getName(){
@@ -18,12 +18,12 @@ class Lane {
 		$this->_name = $name;
 	}
 	
-	public function getSummoner(){
-		return $this->_summoner;
+	public function getPlayer(){
+		return $this->_player;
 	}
 	
-	public function setSummoner($summoner){
-		$this->_summoner = $summoner;
+	public function setPlayer($player){
+		$this->_player = $player;
 	}
 
 }

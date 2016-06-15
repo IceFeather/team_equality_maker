@@ -39,8 +39,8 @@ class Team {
 		$this->_lanes = $lanes;
 	}
 	
-	public function setLane($summoner, $lane){
-		$$this->_lanes[$lane] = $summoner;
+	public function setLane($player, $lane){
+		$$this->_lanes[$lane] = $player;
 	}
 	
 	public function isFull(){
@@ -50,7 +50,7 @@ class Team {
 	public function countEmptyLanes(){
 		$count = 0;
 		foreach ($this->_lanes as $lane){
-			if ($lane->getSummoner() == null){
+			if ($lane->getPlayer() == null){
 				$count++;
 			}
 		}
@@ -60,8 +60,8 @@ class Team {
 	public function getRank(){
 		$rank = 0;
 		foreach ($this->_lanes as $lane){
-			if ($lane->getSummoner() != null){
-				$rank += $lane->getSummoner()->getRank();
+			if ($lane->getPlayer() != null){
+				$rank += $lane->getPlayer()->getRank();
 			}
 		}
 		return $rank;

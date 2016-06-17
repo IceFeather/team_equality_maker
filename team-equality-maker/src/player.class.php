@@ -15,6 +15,7 @@ class Player {
 	private $_first_lane; 
 	private $_second_lane;  
 	private $_assigned; //boolean
+	private $_ip;
 	
 	public function __construct(){
 		$this->_assigned = false;
@@ -58,6 +59,14 @@ class Player {
 	
 	public function setAssigned($assigned){
 		$this->_assigned = $assigned;
+	}
+	
+	public function getIp() {
+		return $this->_ip;
+	}
+	
+	public function setIp($ip) {
+		$this->_ip = $ip;
 	}
 	
 	public function assignToLane(&$team_list, $lane){
